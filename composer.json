@@ -18,7 +18,7 @@
   "require": {
     "typo3/cms-core": "^11 || ^12",
     "jaybizzle/crawler-detect": "~1.2",
-    "doctrine/dbal": "^2.13.0",
+    "doctrine/dbal": "^3.8.*",
     "ext-json": "*",
     "php": "^8.0"
   },
