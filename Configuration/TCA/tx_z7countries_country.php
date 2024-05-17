@@ -7,7 +7,6 @@ return [
         'default_sortby' => 'title',
         'tstamp' => 'tstamp',
         'crdate' => 'crdate',
-        'cruser_id' => 'cruser_id',
         'delete' => 'deleted',
         'rootLevel' => 1,
         'adminOnly' => true,
@@ -39,7 +38,7 @@ return [
             'config' => [
                 'type' => 'check',
                 'items' => [
-                    [0 => '', 'invertStateDisplay' => true]
+                    ['label' => '']
                 ],
                 'default' => 0
             ]
@@ -50,7 +49,7 @@ return [
             'config' => [
                 'type' => 'check',
                 'items' => [
-                    [0 => '']
+                    ['label' => '']
                 ],
                 'default' => 1
             ]
@@ -61,7 +60,8 @@ return [
             'label' => 'LLL:EXT:z7_countries/Resources/Private/Language/locallang_db.xlf:tx_z7countries_country.title',
             'config' => [
                 'type' => 'input',
-                'eval' => 'trim,required',
+                'required' => true,
+                'eval' => 'trim',
                 'default' => ''
             ]
         ],
@@ -72,7 +72,8 @@ return [
             'config' => [
                 'type' => 'select',
                 'renderType' => 'selectSingle',
-                'eval' => 'trim,required,unique',
+                'required' => true,
+                'eval' => 'trim,unique',
                 'max' => 2,
                 'items' => [
                     ['----', ''], ['AD', 'AD'], ['AE', 'AE'], ['AF', 'AF'], ['AG', 'AG'], ['AI', 'AI'], ['AL', 'AL'], ['AM', 'AM'], ['AO', 'AO'], ['AQ', 'AQ'],
@@ -110,7 +111,8 @@ return [
             'description' => 'LLL:EXT:z7_countries/Resources/Private/Language/locallang_db.xlf:tx_z7countries_country.parameter.description',
             'config' => [
                 'type' => 'input',
-                'eval' => 'trim,required,alphanum_x,nospace,unique',
+                'required' => true,
+                'eval' => 'trim,alphanum_x,nospace,unique',
                 'default' => ''
             ]
         ],
