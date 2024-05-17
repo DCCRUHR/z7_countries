@@ -70,7 +70,7 @@ abstract class AbstractMenu implements MenuInterface
         $constraints = [];
 
         if ($language->getLanguageId()) {
-            $constraints[] = $this->queryBuilder->expr()->andX(
+            $constraints[] = $this->queryBuilder->expr()->and(
                 $this->queryBuilder->expr()->eq('l10n_parent', $this->pageId),
                 $this->queryBuilder->expr()->eq('sys_language_uid', $language->getLanguageId())
             );
@@ -80,7 +80,7 @@ abstract class AbstractMenu implements MenuInterface
 
         return (bool)$this->queryBuilder->count('uid')
             ->from(self::TABLE_NAME)
-            ->where($this->queryBuilder->expr()->andX(...$constraints))
+            ->where($this->queryBuilder->expr()->and(...$constraints))
             ->execute()
             ->fetchOne();
     }
@@ -95,7 +95,7 @@ abstract class AbstractMenu implements MenuInterface
 
         return (bool)$this->queryBuilder->count('uid')
             ->from(self::TABLE_NAME)
-            ->where($this->queryBuilder->expr()->andX(...$constraints))
+            ->where($this->queryBuilder->expr()->and(...$constraints))
             ->execute()
             ->fetchOne();
     }
