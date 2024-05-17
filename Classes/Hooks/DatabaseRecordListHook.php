@@ -10,13 +10,12 @@ use TYPO3\CMS\Core\Database\Query\QueryBuilder;
 use TYPO3\CMS\Core\Localization\LanguageService;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Recordlist\RecordList\DatabaseRecordList;
-use TYPO3\CMS\Recordlist\RecordList\RecordListHookInterface;
 use Zeroseven\Countries\Database\QueryRestriction\CountryQueryRestriction;
 use Zeroseven\Countries\Service\CountryService;
 use Zeroseven\Countries\Service\IconService;
 use Zeroseven\Countries\Service\TCAService;
 
-class DatabaseRecordListHook implements RecordListHookInterface, HookInterface
+class DatabaseRecordListHook implements HookInterface
 {
     protected const PARAMETER = 'tx_z7country';
 
