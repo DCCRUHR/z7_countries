@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Zeroseven\Countries\Menu;
 
+use TYPO3\CMS\Extbase\Utility\DebuggerUtility;
 use Zeroseven\Countries\Service\CountryService;
 
 class LanguageMenu extends AbstractMenu
@@ -16,6 +17,7 @@ class LanguageMenu extends AbstractMenu
             $menu[$language->getLanguageId()] = $this->getLanguageMenuItem($language);
 
             foreach (CountryService::getCountriesByLanguageUid($language->getLanguageId()) as $country) {
+                DebuggerUtility::var_dump($country);die();
                 if ($country->isEnabled()) {
                     $menu[$language->getLanguageId()]->addCountryItem($this->getCountryMenuItem($language, $country));
                 }
