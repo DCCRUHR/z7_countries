@@ -81,7 +81,7 @@ abstract class AbstractMenu implements MenuInterface
         return (bool)$this->queryBuilder->count('uid')
             ->from(self::TABLE_NAME)
             ->where($this->queryBuilder->expr()->and(...$constraints))
-            ->execute()
+            ->executeQuery()
             ->fetchOne();
     }
 
@@ -96,7 +96,7 @@ abstract class AbstractMenu implements MenuInterface
         return (bool)$this->queryBuilder->count('uid')
             ->from(self::TABLE_NAME)
             ->where($this->queryBuilder->expr()->and(...$constraints))
-            ->execute()
+            ->executeQuery()
             ->fetchOne();
     }
 
