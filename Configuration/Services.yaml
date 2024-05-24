@@ -6,6 +6,7 @@ services:
 
   Zeroseven\Countries\:
     resource: '../Classes/*'
+    exclude: '../Classes/Domain/Model/*'
 
   Zeroseven\Countries\Hooks\CountryPreviewButtons:
     public: true
